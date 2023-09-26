@@ -18,7 +18,7 @@
                 <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <400>;
             flavor = "balanced";
         };
         htL: htL {
@@ -29,7 +29,7 @@
                 <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <400>;
             flavor = "balanced";
         };
     };
@@ -45,10 +45,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp GRAVE         &kp Q     &kp W       &kp E       &kp R          &kp T        &kp Y            &kp U       &kp I                &kp O             &kp P     &kp BACKSLASH
-&kp ESC           &htL 4 A  &ht LALT S  &mt LCMD D  &htL 3 F       &kp G        &kp H            &kp J       &kp K                &kp L             &kp SEMI  &kp SQT
-&kp LEFT_BRACKET  &kp Z     &kp X       &kp C       &kp V          &kp B        &kp N            &ht RCMD M  &ht RIGHT_ALT COMMA  &ht RCTRL PERIOD  &kp FSLH  &kp RIGHT_BRACKET
-                                        &kp TAB     &kp BACKSPACE  &kp SPACE    &kp RIGHT_SHIFT  &kp ENTER   &kp UP_ARROW
+&kp GRAVE  &kp Q     &kp W       &kp E        &kp R      &kp T        &kp Y            &kp U       &kp I                &kp O             &kp P     &kp BACKSPACE
+&kp ESC    &htL 4 A  &ht LALT S  &mt LCMD D   &htL 3 F   &kp G        &kp H            &kp J       &kp K                &kp L             &kp SEMI  &kp SQT
+&kp TAB    &kp Z     &kp X       &ht RG(C) C  &kp V      &kp B        &kp N            &ht RCMD M  &ht RIGHT_ALT COMMA  &ht RCTRL PERIOD  &kp FSLH  &kp RETURN
+                                 &kp LEFT     &kp RIGHT  &kp SPACE    &kp RIGHT_SHIFT  &kp DOWN    &kp UP_ARROW
             >;
         };
 
@@ -87,7 +87,7 @@
 &none  &none      &none     &none     &none          &none     &kp LEFT_BRACKET  &kp PAGE_DOWN  &kp PAGE_UP  &kp RIGHT_BRACKET  &none          &none
 &none  &kp LCTRL  &kp LGUI  &kp LALT  &none          &none     &kp LEFT          &kp DOWN       &kp UP       &kp RIGHT          &kp BACKSLASH  &none
 &none  &none      &none     &none     &none          &none     &kp MINUS         &kp HOME       &kp END      &kp EQUAL          &none          &none
-                            &kp TAB   &kp BACKSPACE  &trans    &trans            &trans         &trans
+                            &kp TAB   &kp BACKSPACE  &trans    &trans            &kp BACKSPACE  &trans
             >;
         };
 
