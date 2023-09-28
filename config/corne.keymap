@@ -37,7 +37,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        home {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -45,10 +45,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp GRAVE  &kp Q     &kp W       &kp E        &kp R      &kp T        &kp Y            &kp U       &kp I                &kp O             &kp P          &kp SQT
-&kp ESC    &htL 4 A  &ht LALT S  &ht LCMD D   &htL 3 F   &htL 5 G     &kp H            &kp J       &kp K                &kp L             &kp BACKSPACE  &kp SEMICOLON
-&kp TAB    &kp Z     &kp X       &ht RG(C) C  &kp V      &kp B        &kp N            &ht RCMD M  &ht RIGHT_ALT COMMA  &ht RCTRL PERIOD  &kp RETURN     &kp SLASH
-                                 &kp LEFT     &kp RIGHT  &kp SPACE    &kp RIGHT_SHIFT  &kp DOWN    &kp UP_ARROW
+&kp GRAVE  &kp Q     &kp W       &kp E        &kp R      &kp T           &kp Y            &kp U       &kp I                &kp O             &kp P          &kp SQT
+&kp ESC    &htL 4 A  &ht LALT S  &ht LCMD D   &htL 3 F   &htL 5 G        &kp H            &kp J       &kp K                &kp L             &kp BACKSPACE  &kp SEMICOLON
+&kp TAB    &kp Z     &kp X       &ht RG(C) C  &kp V      &kp B           &kp N            &ht RCMD M  &ht RIGHT_ALT COMMA  &ht RCTRL PERIOD  &kp RETURN     &kp SLASH
+                                 &kp LEFT     &kp RIGHT  &htL 7 SPACE    &kp RIGHT_SHIFT  &kp DOWN    &kp UP_ARROW
             >;
         };
 
@@ -85,9 +85,9 @@
         Right {
             bindings = <
 &none  &none      &none     &none     &none          &none     &kp LEFT_BRACKET  &kp PAGE_DOWN  &kp PAGE_UP  &kp RIGHT_BRACKET  &none          &none
-&none  &kp LCTRL  &kp LGUI  &kp LALT  &none          &none     &kp LEFT          &kp DOWN       &kp UP       &kp RIGHT          &kp BACKSLASH  &none
-&none  &none      &none     &none     &none          &none     &kp MINUS         &kp HOME       &kp END      &kp EQUAL          &none          &none
-                            &kp TAB   &kp BACKSPACE  &trans    &trans            &kp BACKSPACE  &trans
+&none  &kp LCTRL  &kp LGUI  &kp LALT  &none          &none     &kp LEFT          &kp DOWN       &kp UP       &kp RIGHT          &kp BACKSPACE  &kp BACKSLASH
+&none  &none      &none     &none     &none          &none     &kp MINUS         &kp HOME       &kp END      &kp EQUAL          &kp ENTER      &none
+                            &kp TAB   &kp BACKSPACE  &trans    &trans            &kp RET        &kp TAB
             >;
         };
 
@@ -100,21 +100,32 @@
             >;
         };
 
-        layer_5 {
+        BT {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
 &trans  &trans  &trans  &trans  &trans  &trans    &bt BT_PRV    &trans        &trans        &bt BT_NXT    &trans        &to 6
 &trans  &trans  &trans  &trans  &trans  &trans    &trans        &trans        &trans        &trans        &trans        &trans
                         &trans  &trans  &trans    &trans        &trans        &trans
             >;
+
+            label = "SpaceMoves";
         };
 
-        layer_6 {
+        Game {
             bindings = <
 &kp ESC    &kp Q  &kp W  &kp E     &kp R      &kp T        &kp Y   &kp U   &kp I      &kp O    &kp P     &kp BACKSPACE
 &kp TAB    &kp A  &kp S  &kp D     &kp F      &kp G        &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp ENTER
 &kp LSHFT  &kp Z  &kp X  &kp C     &kp V      &kp B        &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &to 0
                          &kp LGUI  &kp LCTRL  &kp SPACE    &trans  &trans  &trans
+            >;
+        };
+
+        Space {
+            bindings = <
+&none  &kp EXCLAMATION  &kp AT_SIGN  &kp HASH      &kp DOLLAR  &kp PERCENT    &kp LCTRL  &kp AMPERSAND  &kp ASTERISK   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none
+&none  &kp N1           &kp N2       &kp N3        &kp N4      &kp N5         &kp N6     &kp N7         &kp N8         &kp N9                &kp N0                 &none
+&none  &none            &kp LCTRL    &kp LEFT_ALT  &kp LCMD    &none          &none      &kp RCMD       &kp RIGHT_ALT  &kp RCTRL             &none                  &none
+                                     &none         &none       &none          &trans     &none          &none
             >;
         };
     };
